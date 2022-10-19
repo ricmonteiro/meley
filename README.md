@@ -19,9 +19,10 @@ Por motivos práticos, vamos apenas utilizar 1000 imagens do dataset. *À medida
 ## Objetivo do projeto:
 - Classificar "Melanoma" e "Não-melanoma" dado o melanoma ser a patologia com pior diagnóstico do dataset. Assim, é importante clinicamente distinguir o que é ou não melanoma.
 
-## Features possíveis de serem utilizadas *lista provisória, colocar à frente se a sua extração foi bem sucedida*
-- valores dos canais de cor 
-- média, moda e desvio padrão dos canais RGB
+## Features possíveis de serem utilizadas 
+(*lista provisória, colocar à frente se a sua extração foi bem sucedida*)
+* valores dos canais de cor 
+* média, moda e desvio padrão dos canais RGB
 
 
 ## To-do
