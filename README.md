@@ -1,23 +1,13 @@
 # AA_MEB
 
-Dataset: https://www.kaggle.com/datasets/andrewmvd/isic-2019
+Dataset: https://challenge.isic-archive.com/data/#2018
 
-O dataset ISIC 2019 contém 25 331 imagens de dermatoscopia com 9 níveis diferentes de diagnóstico:
+O dataset ISIC 2018 contém 2594 imagens de dermatoscopia com 2 níveis diferentes de diagnóstico:
 * Melanoma
-* Melanocytic nevus
-* Basal cell carcinoma
-* Actinic keratosis
-* Benign keratosis (solar lentigo / seborrheic keratosis / lichen planus-like keratosis)
-* Dermatofibroma
-* Vascular lesion
-* Squamous cell carcinoma
-* None of the above
-
-
-Por motivos práticos, vamos apenas utilizar 1000 imagens do dataset. *À medida do trabalho perceber se mesmo este valor é exequível*
+* Seborrheic keratosis 
 
 ## Objetivo do projeto:
-- Classificar "Melanoma" e "Não-melanoma" dado o melanoma ser a patologia com pior diagnóstico do dataset. Assim, é importante clinicamente distinguir o que é ou não melanoma.
+- Classificar "Melanoma" e "Ceratose/Não-melanoma"
 
 ## Features possíveis de serem utilizadas 
 (*lista provisória, colocar à frente se a sua extração foi bem sucedida*)
