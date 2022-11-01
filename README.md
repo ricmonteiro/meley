@@ -2,7 +2,7 @@
 
 Dataset: https://challenge.isic-archive.com/data/#2018
 
-O dataset ISIC 2018 contém 2594 imagens de dermatoscopia com 2 níveis diferentes de diagnóstico:
+O dataset ISIC 2017 contém 2000 imagens de dermatoscopia com 2 níveis diferentes de diagnóstico:
 * Melanoma
 * Seborrheic keratosis 
 
