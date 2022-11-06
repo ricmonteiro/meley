@@ -11,7 +11,6 @@ O dataset ISIC 2017 contém 2000 imagens de dermatoscopia com 2 níveis diferent
 
 ## Features possíveis de serem utilizadas 
 (*lista provisória, colocar à frente se a sua extração foi bem sucedida*)
-* valores dos canais de cor 
 * mediana, distancia interquartis e moda dos canais RGB
 
 
