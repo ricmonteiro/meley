@@ -1,6 +1,6 @@
 # AA_MEB
 
-Dataset: https://challenge.isic-archive.com/data/#2018
+Dataset: https://challenge.isic-archive.com/data/#2017
 
 O dataset ISIC 2017 contém 2000 imagens de dermatoscopia com 2 níveis diferentes de diagnóstico:
 * Melanoma
