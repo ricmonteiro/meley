@@ -19,14 +19,12 @@ def index(request):
       
       img_obj = form.instance
 
-      template = loader.get_template('class.html')
-      print(diagnosis)
-      
+      template = loader.get_template('class.html')     
 
-      if diagnosis[0][0]>0.75:
+      if diagnosis[0][0]>0.70:
         result = 'queratose'
         probability = round(diagnosis[0][0]*100,1)
-      elif diagnosis[0][1]>0.75:
+      elif diagnosis[0][1]>0.70:
         result = 'melanoma'
         probability = round(diagnosis[0][1]*100,1)
       else:
