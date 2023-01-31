@@ -22,10 +22,11 @@ def extract_features(image):
     im_rgb = cv.cvtColor(im, cv.COLOR_BGR2RGB)
     im_gray = cv.cvtColor(im, cv.COLOR_BGR2GRAY)
 
-    mask_path = './ISIC-2017_Training_Part1_GroundTruth/'
+    mask_path = './app_test_mask/'
     mask = cv.imread(mask_path + image[:-4] + '_segmentation.png')
     extractor = featureextractor.RadiomicsFeatureExtractor()# create extractor instance from Pyradiomics
     im, label = './pyradiomicsdir/img_gray_1.jpg' , './pyradiomicsdir/mask_1.jpg'
+
     # save grayscale image and mask as jpg
     cv.imwrite(im, im_gray) 
     cv.imwrite(label, mask)
@@ -52,11 +53,6 @@ def extract_features(image):
     for c, k in enumerate(k):
         if k in features_to_extract:
             features.append(v[c])
-
-    print(len(features), features)
-
-
-
 
     return features
 
