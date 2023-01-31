@@ -16,14 +16,24 @@ def index(request):
       image = str(request.FILES['image'])
       features = extract_features(image)
       diagnosis = diagnose(features)
-        
-
+      
       img_obj = form.instance
 
       template = loader.get_template('class.html')
+      print(diagnosis)
+      
+
+      if diagnosis[0][0]>0.9:
+        result = 'queratose'
+        probability = round(diagnosis[0][0]*100,1)
+      else:
+        result = 'melanoma'
+        probability = round(diagnosis[0][1]*100,1)
+      
 
       context = {
-          'diagnostic' : diagnosis,
+          'result' : result,
+          'probability' : str(probability),
           'img_obj' : img_obj,
         }
 

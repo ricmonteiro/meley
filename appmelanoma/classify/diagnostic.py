@@ -6,24 +6,23 @@ import joblib
 from scipy.stats import skew
 import os
 import SimpleITK as sitk
-'''
+from iteration_utilities import flatten, deepflatten
+
 features_to_extract = ['blue_iqr', 'original_firstorder_Entropy',
        'original_firstorder_Skewness',
        'original_gldm_LargeDependenceLowGrayLevelEmphasis',
        'original_glszm_ZoneEntropy', 'original_ngtdm_Complexity',
        'original_ngtdm_Strength']
-'''
+
 
 
 def extract_features(image):
-    print(os.getcwd())
-    features = [0,0,0,0,0,0,0]
+    features = []
     im = cv.imread('./images/' + image)
     im_rgb = cv.cvtColor(im, cv.COLOR_BGR2RGB)
     im_gray = cv.cvtColor(im, cv.COLOR_BGR2GRAY)
 
     mask_path = './ISIC-2017_Training_Part1_GroundTruth/'
-    print(mask_path + image[:-4]+ '_segmentation.png')
     mask = cv.imread(mask_path + image[:-4] + '_segmentation.png')
     extractor = featureextractor.RadiomicsFeatureExtractor()# create extractor instance from Pyradiomics
     im, label = './pyradiomicsdir/img_gray_1.jpg' , './pyradiomicsdir/mask_1.jpg'
@@ -41,7 +40,20 @@ def extract_features(image):
     median = np.median(blue_channel) # get median
     q3, q1 = np.percentile(blue_channel, [75,25]) # get 3rd quartile and 1st quartile
     blue_iqr = q3 - q1 # calculate quartile diference
-    features[0] = blue_iqr
+    features.append(blue_iqr)
+
+    # iterate through values and append them to list
+    for i in deepflatten(values[22:]):
+        v.append(i.tolist())
+    # iterate through the keys and append them to list
+    for l in keys[22:]:   
+        k.append(l)
+
+    for c, k in enumerate(k):
+        if k in features_to_extract:
+            features.append(v[c])
+
+    print(len(features), features)
 
 
 
@@ -49,29 +61,6 @@ def extract_features(image):
     return features
 
 
-'''
-    #Entropy
-    eps = np.spacing(1)
-    entropy = -1.0 * np.sum(im_gray * np.log2(im_gray + eps), 1)
-    entropy = np.sum(entropy)
-    features[1] = entropy
-
-    #Skewness
-    skewness = skew(im_gray.flatten(), axis=0, bias=True)
-    print(skewness)
-
-    features[2] = skewness
-
-    #LargeDependenceLowGrayLevelEmphasis
-
-
-    #ZoneEntropy
-
-
-    #Complexity
-
-
-    #Strength'''  
 
 
 
