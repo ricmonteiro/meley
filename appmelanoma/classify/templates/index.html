@@ -5,14 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% bootstrap_messages %}
+
 </head>
-<body>
-    
+<body class="text-center p-3 mb-2 bg-primary"> 
+    <h1><strong class="alert alert-danger">*** DO NOT USE THIS APP FOR MEDICAL PURPOSES.*** </strong></h1>
+    <h1 class="alert bg-danger"> THIS APP IS PURELY EXPERIMENTAL AND EDUCATIONAL
+        
+        PLEASE SEE A DOCTOR IF YOU SUSPECT YOU MIGHT HAVE SKIN CANCER OR OTHER CONDITION.
+         WE WILL TAKE NO RESPONSABILITY FOR DECISION BASED ON THIS APP'S RESULTS</h1>
 
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">Upload</button>
+
+           
         </form>
     
 </body>

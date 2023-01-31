@@ -18,11 +18,12 @@ features_to_extract = ['blue_iqr', 'original_firstorder_Entropy',
 
 def extract_features(image):
     features = []
-    im = cv.imread('./images/' + image)
+    im = cv.imread('./media/images/' + image)
+    print(im)
     im_rgb = cv.cvtColor(im, cv.COLOR_BGR2RGB)
     im_gray = cv.cvtColor(im, cv.COLOR_BGR2GRAY)
 
-    mask_path = './app_test_mask/'
+    mask_path = './app_mask/'
     mask = cv.imread(mask_path + image[:-4] + '_segmentation.png')
     extractor = featureextractor.RadiomicsFeatureExtractor()# create extractor instance from Pyradiomics
     im, label = './pyradiomicsdir/img_gray_1.jpg' , './pyradiomicsdir/mask_1.jpg'

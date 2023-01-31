@@ -3,7 +3,7 @@ from django.template import loader
 from django.http import HttpResponse
 from .diagnostic import extract_features, diagnose
 from .forms import ImageForm
-
+import numpy as np
 
 
 
@@ -23,12 +23,15 @@ def index(request):
       print(diagnosis)
       
 
-      if diagnosis[0][0]>0.9:
+      if diagnosis[0][0]>0.75:
         result = 'queratose'
         probability = round(diagnosis[0][0]*100,1)
-      else:
+      elif diagnosis[0][1]>0.75:
         result = 'melanoma'
         probability = round(diagnosis[0][1]*100,1)
+      else:
+        result = 'bening mark'
+        probability = round(100-(np.abs(diagnosis[0][0]-diagnosis[0][1]))*100,2)
       
 
       context = {
