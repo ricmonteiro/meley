@@ -21,3 +21,7 @@ O dataset ISIC 2017 contém 2000 imagens de dermatoscopia com 2 níveis diferent
 - Fazer a parte da feature selection Vs PCA
 - 
 ![peek_appmelanoma](https://github.com/GoncaloCJG/AA_MEB/assets/51707272/68ae3742-c53b-4555-9ccf-8e83631c724d)
+
+
+
+meley architecture
